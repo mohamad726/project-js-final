@@ -1,0 +1,16 @@
+      <svg class="svgwelcom"
+        xmlns="http://www.w3.org/2000/svg"
+        width="160px"
+        height="160px"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs>
+          <linearGradient id="myGradient">
+            <stop offset="0%" stop-color="#DA22FF" />
+            <stop offset="100%" stop-color="#9733EE" />
+          </linearGradient>
+        </defs>
+
+        <!-- using my linear gradient -->
+        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+      </svg>

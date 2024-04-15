@@ -1,13 +1,19 @@
-import { El } from '../../../utils/El/El';
+import { El } from "../../utils/El/El";
+
 export const landing = () => {
   return El({
     element: 'div',
     className: '  w-screen   h-screen relative',
     children: [
       El({
+        element:'span',
+        className:'spin-animation',
+
+      }),
+      El({
         element: 'div',
         className:
-          'WallpaperDog bg-no-repeat  bg-cover bg-centert 	w-screen  h-screen  text-3xl  text-[#fff]	 font-medium',
+          'WallpaperDog bg-no-repeat flex justify-center items-center  bg-cover bg-centert 	w-screen  h-screen  text-3xl  text-[#fff]	 font-medium',
         children: [
           El({
             element: 'img',
