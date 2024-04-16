@@ -15,13 +15,16 @@ import{NewBalancePage}from '@/pages/BrandPage/NewBalancePage'
 import { ConversePage } from '@/pages/BrandPage/ConversePage';
 import { MorePage } from '@/pages/BrandPage/MorePage';
 import { AsicsPage } from '@/pages/BrandPage/AsicPage';
+import { ProdutPage } from '@/pages/ProdutPage/ProdutPage';
+import { ProfilePage } from '@/pages/ProfilePage/ProFilePage';
+import { cartPage } from '@/pages/Cart/Cart';
 
 
 
-const changePage = (page) => {
+const changePage = (page,data) => {
   const app = document.getElementById('app');
   app.innerHTML = '';
-  app.append(page());
+  app.append(page(data));
 };
 
 let router = new Navigo('/');
@@ -38,7 +41,7 @@ export const Router = () => {
     })
     .on('/welcom', () => {
       
-      // اضافه کردن صفحه CartPage به DOM
+      
       changePage(landing);
       setTimeout(() => {
         router.navigate('/startapp');
@@ -52,10 +55,15 @@ export const Router = () => {
       // اضافه کردن صفحه CartPage به DOM
       changePage(Login);
     })
+
     .on('/getstart', () => {
       // اضافه کردن صفحه CartPage به DOM
       changePage(ShoppingHome);
     })
+
+    .on("/singleProduct/:id", ({ data }) => changePage(ProdutPage,data)
+    
+  )
     .on("/allProduct", () => {
       changePage(MostPopular);
     })
@@ -85,6 +93,13 @@ export const Router = () => {
     })
     .on("/Asics_Product", () => {
       changePage(AsicsPage);
+    })
+
+    .on("/profile", () => {
+      changePage(ProfilePage);
+    })
+    .on("/cart", () => {
+      changePage(cartPage);
     })
   return router;
 };

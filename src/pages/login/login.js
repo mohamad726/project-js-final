@@ -136,6 +136,18 @@ export const Login = () => {
                     type: 'checkbox',
                     id: 'cb2',
                     name: 'vehicle1',
+                     eventListener: [{
+     event: "click",
+   callback: () => {
+  const checkBox = document.getElementById(
+    "cb2"
+    ).checked;
+  if (checkBox){
+    Cookies.set("isLogin", true , { expires:7} )
+ }
+                     }}
+
+]
                   }),
                   Label('Remember me', 'p-1 '),
                 ],

@@ -1,20 +1,13 @@
-import { El } from "../../utils/El/El";
+import { El } from "@/utils/El/El";
 
-export const button = ({Brand}) => {
- const button= El({
-    element: 'button',
+;
+export function Button({ text, className = "", ...rest }) {
+  return El({
+    element: "button",
+    innerText: text,
     className:
-      'hover:bg-black hover:text-white  py-1.5 px-4 border-black border rounded-full mr-2 transition-all duration-400	',
-    innerText:Brand,
+      "rounded-md text-center block w-full p-2 bg-red-500 text-white hover:bg-red-600 " +
+      className,
+    ...rest,
   });
-button.addEventListener('click',(e)=>{
-    let filterBrand=e.target.innerText.toLowerCase();
-    console.log(filterBrand);
-
-    let productsFilter=renderProducts(filterBrand);
-    const carts=document.getElementById('carts');
-    //carts.append(productsFilter)
-})
-return button
-};
-
+}

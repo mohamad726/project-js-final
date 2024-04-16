@@ -4,7 +4,7 @@ import { El } from "@/utils/El/El";
 
 export function productItem({product}) {
 const {name,price,imageURL,id} = product
-console.log(product);
+
   const productCard =Link({
     href: `/singleProduct/${id}`,
     className: "",

@@ -16,15 +16,9 @@ import './src/assets/style/style.css';
 // // ///landing()
 // document.querySelector('#app').append(router())
 
-Router().navigate('/Login')
 
-// eventListener: [
-//     {
-//     event: "click",
-//     callback: () => {
-//     const checkBox = document.getElementById(
-//     "remember-me-checkbox"
-//     ).checked;
-//     if (checkBox){
-//     Cookies.set("isLogin", true , { expires: 7 });
-//     }
+
+
+
+
+Router().resolve();

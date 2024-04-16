@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 
+@font-face {
+  font-family: inter;
+  src: url('./font/static/Inter-Regular.ttf');
+}
+
 *{
   padding: 0;
   margin: 0;
   outline: none;
+  font-family: inter;
 }
+
 .loader {
   animation: spin 2s linear infinite;
 }
