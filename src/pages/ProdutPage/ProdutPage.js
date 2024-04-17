@@ -6,7 +6,6 @@ import { El } from '@/utils/El/El';
 export function ProdutPage(data) {
   const productID = data.id;
 
-
   const parent = El({
     element: 'div',
     id: 'parentProduct',
@@ -14,7 +13,7 @@ export function ProdutPage(data) {
   });
   getProductById(productID).then((product) => {
     parent.append(singleProductPage({ product }));
-
   });
+
   return parent;
 }

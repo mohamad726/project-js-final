@@ -5,7 +5,7 @@ export function Footer() {
   return El({
     element: "div",
     className:
-      "w-full bg-white fixed bottom-0 z-999 left-0 flex justify-items-center justify-around hover:border-t-2 pt-2 ",
+      "w-full bg-white fixed bottom-0 z-10 left-0 flex justify-items-center justify-around hover:border-t-2 pt-2 ",
     children: [
       Link({
         href: "/getstart",

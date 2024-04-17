@@ -5,24 +5,32 @@ import axios from 'axios';
 
 // GetUser
 export async function GetUser() {
-  const { data } = await axios.get(`${BASE_URL}/users`)
+  const { data } = await axios.get(`${BASE_URL}/users`);
   return data;
 }
 
-// export async function getProductCategory(colors) {
-//   const response = await axios.get(`${BASE_URL}/products/${colors}`);
-//   return response.data;
-// }
+export async function getItemFormodal(value) {
+  const res = await axios.get(`${BASE_URL}/users`);
+  const response = res.data[0].cart;
+  const data = response.filter((item) => item.value == value);
+  return data;
+}
+
+export async function getCartProduct() {
+  const res = await axios.get(`${BASE_URL}/users`);
+  const response = res.data[0].cart;
+
+  return response;
+}
 
 export async function getProductById(id) {
   const response = await axios.get(`${BASE_URL}/products/${id}`);
-  console.log(response.data);
+
   return response.data;
 }
 
-
 export async function getProduct(brand) {
-  if (brand == "ALL") {
+  if (brand == 'ALL') {
     const response = await axios.get(`${BASE_URL}/products`);
     return response.data;
   } else {
@@ -31,14 +39,10 @@ export async function getProduct(brand) {
   }
 }
 
-
-
-
-// //filter 
+// //filter
 // export async function FilterProducts(){
 //   const { data } = await axios.get(`${Base_Url}/products?brand=NIKE`);
 //   return data
 // }
 
 //  export const filter = await FilterProducts();
-

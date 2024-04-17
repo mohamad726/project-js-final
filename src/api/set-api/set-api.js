@@ -2,10 +2,9 @@ import { BASE_URL } from '@/components/constant/constant';
 
 import axios from 'axios';
 
-export async function ProductsCart(product) {
-  try {
-    const response = await axios.post(`${BASE_URL}/users/1/cart`, product);
-  } catch (error) {
-    console.error('خطا در افزودن محصول به سبد خرید:', error.message);
-  }
+export async function setDataToApi(data){
+  const {data:productData}=await axios.get(`${BASE_URL}/users/1`);
+  const cart =productData.cart.concat(data);
+  let response=await axios.patch(`${BASE_URL}/users/1`,{cart})
+  return response.data;
 }

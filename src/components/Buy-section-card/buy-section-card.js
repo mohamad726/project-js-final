@@ -24,7 +24,7 @@ import { BtnAddToCart } from "../button/ButtonAddToCart";
             ],
           }),
          
-          BtnAddToCart(product),
+          BtnAddToCart({product}),
         ],
       })
 }
