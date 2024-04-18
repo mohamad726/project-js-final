@@ -14,9 +14,6 @@ import './src/assets/style/style.css';
 // // //SliderFirstApp()
 // // //OnboardingPage()
 // // ///landing()
-// document.querySelector('#app').append(router())
-
-
 
 
 

@@ -2,6 +2,7 @@ import { El } from "@/utils/El/El";
 import { BtnAddToCart } from "../button/ButtonAddToCart";
 
  export function BuySectionCard({product}){
+
     return El({
         element: "div",
         className: "flex justify-between items-center gap-4 w-full",

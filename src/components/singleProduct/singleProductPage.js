@@ -5,6 +5,8 @@ import { BuySectionCard } from '../Buy-section-card/buy-section-card';
 import { BoxCategorySize } from '../PropertyProduct/CategorySize/BoxCategorySize';
 import { BoxCategorycolors } from '../PropertyProduct/Categorycolors/BoxCategorycolors';
 import { Footer } from '@/layout/footer/footer';
+import { setProductWeshlist } from '../Weshlist/setProductWeshlist';
+
 
 //import { DecreaseBtn, IncreaseBtn } from '../button/MathBtn';
 
@@ -30,11 +32,17 @@ export function singleProductPage({ product }) {
       }.00`;
     }
   }
+
+
   function iconBeloved() {
+
     const heartOne = document.getElementById('heartOne');
     const heartTwo = document.getElementById('heartTwo');
     heartOne.style.display = 'none';
     heartTwo.style.display = 'block';
+
+    setProductWeshlist({product})
+
   }
   function iconUninterested() {
     const heartOne = document.getElementById('heartOne');
@@ -89,7 +97,7 @@ export function singleProductPage({ product }) {
               El({
                 element: 'img',
                 className: 'cursor-pointer w-6 hidden',
-                src: `${BASE_URL_ICON}/Heart 1.svg`,
+                src: `${BASE_URL_ICON}/heart 2.svg`,
                 alt: 'icon heart',
                 id: 'heartTwo',
                 eventListener: [{ event: 'click', callback: iconUninterested }],
