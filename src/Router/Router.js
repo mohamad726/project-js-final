@@ -18,6 +18,7 @@ import { AsicsPage } from '@/pages/BrandPage/AsicPage';
 import { ProdutPage } from '@/pages/ProdutPage/ProdutPage';
 import { ProfilePage } from '@/pages/ProfilePage/ProFilePage';
 import { cartPage } from '@/pages/Cart/Cart';
+import { SearchPage } from '@/pages/search/search';
 
 
 
@@ -100,6 +101,9 @@ export const Router = () => {
     })
     .on("/cart", () => {
       changePage(cartPage);
+    })
+    .on("/search", () => {
+      changePage(SearchPage);
     })
   return router;
 };

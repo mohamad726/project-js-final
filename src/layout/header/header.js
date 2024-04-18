@@ -77,6 +77,7 @@ export function hederHome() {
                 element: 'input',
                 className: 'border relative pl-7 h-9 rounded bg-gray-100 mt-2',
                 type: 'Search',
+                id:'input_search',
                 placeholder: 'Search',
               }),
               El({

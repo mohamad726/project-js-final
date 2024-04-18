@@ -1,4 +1,5 @@
-import { getItemFormodal } from '@/api/get-api/get-api';
+import { getIdToServer, getItemFormodal } from '@/api/get-api/get-api';
+import { RenderProductCart } from '@/pages/Cart/RenderProductCart';
 import { El } from '@/utils/El/El';
 
 export function ModalRemove(selectedIdProdutcRemovecart) {
@@ -10,8 +11,13 @@ export function ModalRemove(selectedIdProdutcRemovecart) {
 function ModalDelete(product) {
   function RemoveProductCart(e) {
     hiddenModal();
-    const id=e.target
-    console.log(id);
+    const id=e.target.id
+  getIdToServer(id).then((data)=>{
+    const renderCart =document.getElementById('renderCart')
+    renderCart.innerHTML='',
+    renderCart.append(RenderProductCart())
+  
+  })
     
   }
   const Modal = document.getElementById('Modal');

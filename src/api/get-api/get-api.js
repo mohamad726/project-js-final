@@ -1,3 +1,4 @@
+import { productItem } from '@/components/HomePage/ProductItem/ProductItem';
 import { BASE_URL } from '@/components/constant/constant';
 import { data } from 'autoprefixer';
 import axios from 'axios';
@@ -16,12 +17,29 @@ export async function getItemFormodal(value) {
   return data;
 }
 
+
+
+
 export async function getCartProduct() {
   const res = await axios.get(`${BASE_URL}/users`);
   const response = res.data[0].cart;
-
   return response;
 }
+
+
+export async function getIdToServer(id){
+  const res =await axios.get(`${BASE_URL}/users`);
+  const response=res.data[0].cart;
+
+  const deleteItem=response.filter((item)=>{
+    item.value != id
+  })
+  const cart=[...deleteItem];
+ 
+  let data=await axios.patch(`${BASE_URL}/users/1`,{cart})
+  return data
+}
+
 
 export async function getProductById(id) {
   const response = await axios.get(`${BASE_URL}/products/${id}`);
@@ -37,6 +55,11 @@ export async function getProduct(brand) {
     const response = await axios.get(`${BASE_URL}/products?brand=${brand}`);
     return response.data;
   }
+}
+
+export async function getItemBySearch(search) {
+  const response = await axios.get(`${BASE_URL}/products?q=${search}`);
+  return response.data;
 }
 
 // //filter
