@@ -33,20 +33,20 @@ export function cartPage(id) {
               }),
             ],
           }),
-          El({
-            element: 'img',
-            className: '',
-            src: '../../../src/assets/img/search.svg',
-            alt: 'icon search',
-          }),
+Link({
+  href:'/search',
+  children:[
+    El({
+      element: 'img',
+      className: '',
+      src: '../../../src/assets/img/search.svg',
+      alt: 'icon search',
+    }),
+  ]
+})
         ],
       }),
-      El({
-        element: 'div',
-        className: '',
-        id: 'body',
-        children: [RenderProductCart()],
-      }),
+      RenderProductCart(),
       El({
         element: 'div',
         id: 'Modal',

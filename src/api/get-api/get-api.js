@@ -23,6 +23,7 @@ export async function getItemFormodal(value) {
 export async function getCartProduct() {
   const res = await axios.get(`${BASE_URL}/users`);
   const response = res.data[0].cart;
+  console.log(response);
   return response;
 }
 
@@ -31,9 +32,7 @@ export async function getIdToServer(id){
   const res =await axios.get(`${BASE_URL}/users`);
   const response=res.data[0].cart;
 
-  const deleteItem=response.filter((item)=>{
-    item.value != id
-  })
+  const deleteItem=response.filter((item)=>item.value != id)
   const cart=[...deleteItem];
  
   let data=await axios.patch(`${BASE_URL}/users/1`,{cart})
@@ -43,7 +42,6 @@ export async function getIdToServer(id){
 
 export async function getProductById(id) {
   const response = await axios.get(`${BASE_URL}/products/${id}`);
-
   return response.data;
 }
 
@@ -56,6 +54,23 @@ export async function getProduct(brand) {
     return response.data;
   }
 }
+
+
+export async function getProductWshlist(filter) {
+  const res = await axios.get(`${BASE_URL}/users`);
+  const response = res.data[0].wishlist;
+   console.log(filter);
+  if (filter != "ALL") {
+  const final = response.filter((item) => item.brand == filter);
+  return final;
+  } else {
+  return response;
+}}
+
+
+
+
+
 
 export async function getItemBySearch(search) {
   const response = await axios.get(`${BASE_URL}/products?q=${search}`);

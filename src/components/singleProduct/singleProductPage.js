@@ -226,7 +226,7 @@ export function singleProductPage({ product }) {
           BuySectionCard({ product }),
         ],
       }),
-      Footer()
+      //Footer()
     ],
   });
 }

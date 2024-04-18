@@ -22,6 +22,7 @@ import { SearchPage } from '@/pages/search/search';
 import { paymentPage } from '@/pages/payment/paymentPage';
 import { OrderPageActive } from '@/pages/order/orderPageActive';
 import { OrderPageComplete } from '../pages/order/orderPageCompelate';
+import { wishlistPage } from '@/pages/wishlistPage/wishlistPage';
 
 
 
@@ -116,6 +117,9 @@ export const Router = () => {
     })
     .on("/orders_complete", () => {
       changePage(OrderPageComplete);
+    })
+    .on("/wishlistPage", () => {
+      changePage(wishlistPage);
     })
   return router;
 };

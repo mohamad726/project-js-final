@@ -4,6 +4,7 @@ import { singleProductPage } from '@/components/singleProduct/singleProductPage'
 import { El } from '@/utils/El/El';
 
 export function ProdutPage(data) {
+  console.log(data);
   const productID = data.id;
 
   const parent = El({

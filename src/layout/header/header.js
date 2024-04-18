@@ -55,12 +55,17 @@ export function hederHome() {
                 src: '../../../src/assets/img/bell.svg',
                 alt: 'icon bell',
               }),
-              El({
-                element: 'img',
-                className: '',
-                src: '../../../src/assets/img/heart.svg',
-                alt: 'icon heart',
-              }),
+Link({
+  href:'/wishlistPage',
+  children:[
+    El({
+      element: 'img',
+      className: '',
+      src: '../../../src/assets/img/heart.svg',
+      alt: 'icon heart',
+    }),
+  ]
+})
             ],
           }),
         ],

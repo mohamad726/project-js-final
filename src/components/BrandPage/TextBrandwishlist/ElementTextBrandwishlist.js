@@ -1,6 +1,5 @@
 //import { RenderProduct } from "@/components/HomePage/RenderProduct/RenderProduct";
-
-import { RenderProductWishlist } from "@/components/HomePage/RenderProduct/RenderProductWishlist";
+import { RenderProduct } from "@/components/HomePage/RenderProduct/RenderProduct";
 import { El } from "@/utils/El/El";
 
 export function ElementTextBrand({brand}){
@@ -13,15 +12,14 @@ export function ElementTextBrand({brand}){
 
   button.addEventListener("click",(e)=>{
     const filter =e.target.innerText.toUpperCase()
-    const render = document.getElementById("renderweshlist")
+    const render = document.getElementById("render")
     if(render != null){
       render.remove()
     }
-    const main = document.getElementById("homewishlist")
-    let productFilter = RenderProductWishlist(filter)
+    const main = document.getElementById("home")
+    let productFilter = RenderProduct(filter)
     main.append(productFilter)
 
   })
 return button;
 }
-

@@ -1,37 +1,36 @@
-import { Link } from "@/components/Link/Link";
-import { El } from "@/utils/El/El";
+import { Link } from '@/components/Link/Link';
+import { El } from '@/utils/El/El';
 
+export function productItem({ product }) {
+  const { name, price, imageURL, id } = product;
 
-export function productItem({product}) {
-const {name,price,imageURL,id} = product
-
-  const productCard =Link({
+  const productCard = Link({
     href: `/singleProduct/${id}`,
-    className: "",
+    className: '',
     children: [
       El({
-        element: "div",
-        className: "product",
+        element: 'div',
+        className: 'product',
         children: [
           El({
-            element: "img",
-            className: "rounded-xl h-[150px]",
-            src:imageURL,
+            element: 'img',
+            className: 'rounded-xl h-[150px]',
+            src: imageURL,
             alt: name,
           }),
           El({
-            element: "h2",
-            className: "font-bold text-lg ",
+            element: 'h2',
+            className: 'font-bold text-lg ',
             innerText: name,
           }),
           El({
-            element: "span",
-            className: "font-semibold",
-            innerText: ` $ ${price}.00`,
+            element: 'span',
+            className: 'font-semibold',
+            innerText: `  $${price}`,
           }),
         ],
-      })
+      }),
     ],
-  })
+  });
   return productCard;
 }
