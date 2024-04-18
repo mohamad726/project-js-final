@@ -19,6 +19,9 @@ import { ProdutPage } from '@/pages/ProdutPage/ProdutPage';
 import { ProfilePage } from '@/pages/ProfilePage/ProFilePage';
 import { cartPage } from '@/pages/Cart/Cart';
 import { SearchPage } from '@/pages/search/search';
+import { paymentPage } from '@/pages/payment/paymentPage';
+import { OrderPageActive } from '@/pages/order/orderPageActive';
+import { OrderPageComplete } from '../pages/order/orderPageCompelate';
 
 
 
@@ -104,6 +107,15 @@ export const Router = () => {
     })
     .on("/search", () => {
       changePage(SearchPage);
+    })
+    .on("/payment", () => {
+      changePage(paymentPage);
+    })
+    .on("/orders_Active", () => {
+      changePage(OrderPageActive);
+    })
+    .on("/orders_complete", () => {
+      changePage(OrderPageComplete);
     })
   return router;
 };

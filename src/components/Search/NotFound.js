@@ -11,7 +11,7 @@ export function NotFound() {
       El({
         element: "img",
         className: "mt-10",
-        src: "./src/assets/img/Doc.png",
+        src: "../../../src/assets/img/Doc.png",
         alt: "icon wishlist",
       }),
       El({

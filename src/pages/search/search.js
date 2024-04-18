@@ -14,7 +14,6 @@ export function SearchPage() {
     document.getElementById(
       "contSearch"
     ).innerText = `Result for "${inputElement.value}"`;
-
     if (inputElement.value == "") {
       const renderSearch = document.getElementById("renderSearch");
       renderSearch.innerHTML = "";

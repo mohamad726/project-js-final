@@ -9,6 +9,7 @@ import { RenderSearch } from './RenderSearch';
 export function OneCommentSearch(name) {
   function deleteData(e) {
     const nameData = e.target.closest('#parent-data').children[0].innerText;
+
     const items = getLocalStorage('searched');
     const newItem = items.filter((item) => item !== nameData);
 
