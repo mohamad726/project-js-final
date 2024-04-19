@@ -23,6 +23,9 @@ import { paymentPage } from '@/pages/payment/paymentPage';
 import { OrderPageActive } from '@/pages/order/orderPageActive';
 import { OrderPageComplete } from '../pages/order/orderPageCompelate';
 import { wishlistPage } from '@/pages/wishlistPage/wishlistPage';
+import { CheckoutPage } from '@/pages/checkout/checkout';
+import { AddressPage } from '@/components/address/AddressPage';
+import { choseShopping } from '@/pages/choseShopping/choseShopping';
 
 
 
@@ -120,6 +123,16 @@ export const Router = () => {
     })
     .on("/wishlistPage", () => {
       changePage(wishlistPage);
+      
+    })
+    .on("/checkout", () => {
+      changePage(CheckoutPage);
+    })
+    .on("/address", () => {
+      changePage(AddressPage);
+    })
+    .on("/choseShopping", () => {
+      changePage(choseShopping);
     })
   return router;
 };

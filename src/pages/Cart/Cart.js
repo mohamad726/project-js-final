@@ -5,6 +5,7 @@ import { Link } from '@/components/Link/Link';
 import { Footer } from '@/layout/footer/footer';
 import { El } from '@/utils/El/El';
 import { RenderProductCart } from './RenderProductCart';
+import { FooterCart } from '@/layout/FooterCart/FooterCart';
 
 export function cartPage(id) {
   return El({
@@ -54,6 +55,7 @@ Link({
           'bg-gray-100 w-screen h-[400px] fixed bottom-0 z-[11] rounded-t-[80px] hidden left-0 ',
 
       }),
+      FooterCart(),
       Footer(),
     ],
   });

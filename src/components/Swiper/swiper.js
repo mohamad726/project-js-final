@@ -78,7 +78,7 @@ children:[
     element: 'button',
     innerText: 'Next',
     className:
-      'bg-gray-800 w-[90%]   text-white box-border rounded-full p-3 text-center itmes-center hover:bg-black ',
+      'bg-gray-800 w-[90%] mt-[200px]  text-white box-border rounded-full p-3 text-center itmes-center hover:bg-black ',
       eventListener: [{ event: 'click', callback:NextSlide }]
   })
 ]

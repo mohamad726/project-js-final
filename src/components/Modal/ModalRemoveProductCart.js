@@ -4,7 +4,7 @@ import { El } from '@/utils/El/El';
 
 export function ModalRemove(selectedIdProdutcRemovecart) {
   getItemFormodal(selectedIdProdutcRemovecart).then((item) => {
-    const cart = ModalDelete(...item);
+    ModalDelete(...item);
   });
 }
 

@@ -6,7 +6,6 @@ export const ProductCart = (product) => {
   const idPrduct=product.id
 function RemoveProductCart(e){
 const selectedIdProdutcRemovecart=e.target.id
-console.log(selectedIdProdutcRemovecart);
 ModalRemove(selectedIdProdutcRemovecart)
 }
  let quantity = product.Quantity;

@@ -13,6 +13,7 @@ export async function GetUser() {
 export async function getItemFormodal(value) {
   const res = await axios.get(`${BASE_URL}/users`);
   const response = res.data[0].cart;
+  
   const data = response.filter((item) => item.value == value);
   return data;
 }

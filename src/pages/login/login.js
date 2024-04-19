@@ -54,7 +54,8 @@ export const Login = () => {
               El({
                 element: 'div',
                 className:
-                  'rounded-md bg-gray-100 p-2 w-[90%] flex justify-between',
+                  'rounded-md  bg-gray-100 p-2 w-[90%] flex justify-between',
+                  id:'boxEmail',
                 children: [
                   El({
                     element: 'div',
@@ -83,6 +84,7 @@ export const Login = () => {
                 element: 'div',
                 className:
                   'rounded-md bg-gray-100 p-2 w-[90%] flex justify-between',
+                  id:'boxPass',
                 children: [
                   El({
                     element: 'div',
@@ -203,7 +205,7 @@ const inputEmail = () => {
   const input = document.querySelector('.inputEmail');
   const icon = document.querySelector('.iconEmailInput');
   const iconpath = document.querySelector('.iconpath');
-
+  
   if (input.value === '') {
     icon.setAttribute('fill', '#6C757D');
     //icon.classList.remove("bg-gray-2")
@@ -217,28 +219,30 @@ const checkUser = () => {
   const inputpass = document.getElementById('inputpass');
 
   dataUser.map((items) => {
+    const  boxEmail=document.getElementById('boxEmail')
+    const  boxPass=document.getElementById('boxPass')
     if (items.email == inputEmail.value && items.password == inputpass.value) {
      Router().navigate('/getstart');
     }
     inputEmail.value == ''
-      ? (inputEmail.classList.add('bg-red-400'),
-        inputEmail.classList.remove('bg-green-400'))
+      ? (boxEmail.classList.add('border-2', 'border-red-500'),
+      boxEmail.classList.remove('bg-green-400'))
       : items.email != inputEmail.value
-      ? (inputEmail.classList.add('bg-red-400'),
-        inputEmail.classList.remove('bg-green-400'))
+      ? (boxEmail.classList.add('border-2', 'border-red-500'),
+      boxEmail.classList.remove('bg-green-400'))
       : items.email == inputEmail.value
-      ? (inputEmail.classList.remove('bg-red-400'),
-        inputEmail.classList.add('bg-green-400'))
+      ? (boxEmail.classList.remove('border-2', 'border-red-500'),
+      boxEmail.classList.add('bg-green-400'))
       : '';
       inputpass.value == ''
-      ? (inputpass.classList.add('bg-red-400'),
-      inputpass.classList.remove('bg-green-400'))
+      ? (boxPass.classList.add('border-2', 'border-red-500'),
+      boxPass.classList.remove('bg-green-400'))
       : items.password != inputpass.value
-      ? (inputpass.classList.add('bg-red-400'),
-      inputpass.classList.remove('bg-green-400'))
+      ? (boxPass.classList.add('border-2', 'border-red-500'),
+      boxPass.classList.remove('bg-green-400'))
       : items.password == inputpass.value
-      ? (inputpass.classList.remove('bg-red-400'),
-      inputpass.classList.add('bg-green-400'))
+      ? (boxPass.classList.remove('border-2', 'border-red-500'),
+      boxPass.classList.add('border-2', 'border-green-500'))
       : '';
   });
 };
